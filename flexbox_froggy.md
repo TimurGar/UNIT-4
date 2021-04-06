@@ -1,7 +1,7 @@
 # Flexbox Froggy
 
 ### Reflection
-
+After completing the task I've learned a lot about how to align element in CSS. For example, to align elements horizontaly you can use "justify-content" and "align-items" to verticaly.
 ### Answers
 1. justify-content: flex-end;
 2. justify-content: center;
