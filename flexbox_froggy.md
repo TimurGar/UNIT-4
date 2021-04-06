@@ -2,6 +2,9 @@
 
 ### Reflection
 After completing the task I've learned a lot about how to align element in CSS. For example, to align elements horizontaly you can use "justify-content" and "align-items" to verticaly.
+
+![Frogy](https://user-images.githubusercontent.com/60378207/113699987-3be47c00-9711-11eb-8555-92e30db2e88f.png)
+
 ### Answers
 1. justify-content: flex-end;
 2. justify-content: center;
