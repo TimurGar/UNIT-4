@@ -167,5 +167,5 @@ test5 = Quiz_30(569097293).findTwoDivisors()
 
 ```
 ### Testing
-![Quiz 30](https://user-images.githubusercontent.com/60378207/114350559-4fc22f00-9ba4-11eb-8d85-b542a7b0929a.png)
+![Quiz 30](https://user-images.githubusercontent.com/60378207/114351751-01ae2b00-9ba6-11eb-946f-b7b74bcd3c8f.png)
 
