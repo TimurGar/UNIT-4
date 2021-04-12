@@ -65,6 +65,9 @@ h1{
 
 
 ## Quiz 29
+### Initial Flow diagram
+![170995002_359152632094324_8264247836928379369_n](https://user-images.githubusercontent.com/60378207/114350870-c6f7c300-9ba4-11eb-8040-9eb6bdb3d24d.jpg)
+
 ### Solution
 ```.py
 # Quiz 27
@@ -123,3 +126,56 @@ test4 = Quiz_29(12,3,["1-5:PASS","0-0:FAIL", "6-11:PASS"]).LED_test()
 ```
 ### Testing
 ![Quiz 29](https://user-images.githubusercontent.com/60378207/114259919-6a61a000-9a0c-11eb-84e4-6cf12626bd9e.png)
+
+## Quiz 30
+### Initial Flow diagram
+![IMG_20210412_134503](https://user-images.githubusercontent.com/60378207/114350975-eb539f80-9ba4-11eb-94e6-0dc7ab673ce2.jpg)
+
+### Solution
+```.py
+# Quiz 30
+# Inputs:
+# Number
+
+# Output:
+# number of divisors of the number that are divisible by 2
+
+class Quiz_30():
+    # initializing
+    def __init__(self,num):
+        self.num = num
+
+    def findTwoDivisors(self):
+        divisors = 0
+        # Finding and counting divisors
+        for i in range(1, self.num + 1):
+            if self.num % i == 0:
+                # Checking wherther the number is divisible by 2
+                if i % 2 == 0:
+                    divisors += 1
+
+        print(divisors)
+
+# Testing
+test1 = Quiz_30(8).findTwoDivisors()
+test2 = Quiz_30(9).findTwoDivisors()
+test3 = Quiz_30(158260522).findTwoDivisors()
+test4 = Quiz_30(861648772).findTwoDivisors()
+test5 = Quiz_30(569097293).findTwoDivisors()
+
+
+# # main algorithm
+# def findTwoDivisors(self):
+#     divisors = 0
+#     # Checking wherther the number is divisible by 2
+#     if self.num % 2 == 0:
+#         # Finding and counting divisors
+#         for i in range(1, self.num):
+#             if self.num % i == 0:
+#                 divisors += 1
+#
+#     print(divisors)
+```
+### Testing
+![Quiz 30](https://user-images.githubusercontent.com/60378207/114350559-4fc22f00-9ba4-11eb-8d85-b542a7b0929a.png)
+
