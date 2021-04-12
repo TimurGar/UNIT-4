@@ -147,11 +147,12 @@ class Quiz_30():
 
     def findTwoDivisors(self):
         divisors = 0
-        # Finding and counting divisors
-        for i in range(1, self.num + 1):
-            if self.num % i == 0:
-                # Checking wherther the number is divisible by 2
-                if i % 2 == 0:
+        # Checking if the number is divisible by 2
+        # If not, it will not have divitors of 2
+        if self.num % 2 == 0:
+            # Finding and counting divisors that are divisible by 2
+            for i in range(1, self.num + 1):
+                if self.num % i == 0 and i % 2 == 0:
                     divisors += 1
 
         print(divisors)
@@ -164,17 +165,6 @@ test4 = Quiz_30(861648772).findTwoDivisors()
 test5 = Quiz_30(569097293).findTwoDivisors()
 
 
-# # main algorithm
-# def findTwoDivisors(self):
-#     divisors = 0
-#     # Checking wherther the number is divisible by 2
-#     if self.num % 2 == 0:
-#         # Finding and counting divisors
-#         for i in range(1, self.num):
-#             if self.num % i == 0:
-#                 divisors += 1
-#
-#     print(divisors)
 ```
 ### Testing
 ![Quiz 30](https://user-images.githubusercontent.com/60378207/114350559-4fc22f00-9ba4-11eb-8d85-b542a7b0929a.png)
