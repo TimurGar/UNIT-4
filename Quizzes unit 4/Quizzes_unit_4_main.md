@@ -169,3 +169,97 @@ test5 = Quiz_30(569097293).findTwoDivisors()
 ### Testing
 ![Quiz 30](https://user-images.githubusercontent.com/60378207/114351751-01ae2b00-9ba6-11eb-946f-b7b74bcd3c8f.png)
 
+## Quiz 31
+### Solution
+```.html
+<!-- Quiz 31-->
+<!-- Inputs: string of votes(Name voted for Name/ Name skipped)-->
+<!--Outputs: determened which person was ejected(most votes)
+if the number of voted is bigger than skipped peolple-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 31</title>
+</head>
+<body>
+    <h1>Quiz 31</h1>
+    <h3>To see results, check the console</h3>
+
+    <script>
+        // Creating a function
+        function saboteur(array_of_votes) {
+            // Creating arrays
+            var people_who_voted = new Array();
+            var people_who_skipped = new Array();
+
+            for (var i = 0; i < array_of_votes.length; i++) {
+
+                // Checking if each input has " voted for ".
+                // If so, this means the person after " voted for " is selected by voting
+                // https://www.w3schools.com/jsref/jsref_includes_array.asp
+                var test = array_of_votes[i].includes(" voted for ")
+                if(array_of_votes[i].includes(" voted for ") == true) {
+
+                    //  Spilt the string to get the names of the voter and person who is voted
+                    //  https://www.w3schools.com/jsref/jsref_split.asp
+                    var vote = array_of_votes[i].split(" voted for ");
+
+                    // Saving a selected person by voting into an array
+                    // https://stackoverflow.com/questions/18546038/store-javascript-variable-into-array
+                    people_who_voted.push(vote[1]);
+                }
+                else{
+                    // If some input doesn't contain " voted for " it means that the person skipped voting
+                    var skipped = array_of_votes[i].split(" skipped voting");
+                    // Saving the name of the person who skipped
+                    people_who_skipped.push(skipped[0])
+                }
+            }
+            // Adding a flag variable to make sure that the counting
+            // process is happening only when needed
+            var flag = 0;
+            if(people_who_skipped.length > people_who_voted.length){
+                console.log("No one was ejected (Skipped)");
+                flag ++;
+            }
+            if(people_who_skipped.length == people_who_voted.length){
+                console.log("No one was ejected (Tie)");
+                flag ++;
+            }
+            if(flag == 0) {
+
+                var max_occurrence = 0;
+                var most_voted_person = "";
+                // Checking counting the number of occurrences(votes for a particular person) for each person
+                for (var y = 0; y < people_who_voted.length; y++) {
+                    var votes_for_an_each_person = 0;
+                    var votes_for_an_each_person = people_who_voted.filter((v) => (v === people_who_voted[y])).length;
+
+                    // Saving the biggest number of occurrences
+                    // and the person who got the most occurrences
+                    if (votes_for_an_each_person > max_occurrence) {
+                        max_occurrence = votes_for_an_each_person
+                        most_voted_person = people_who_voted[y]
+                    }
+                }
+                // Outputing the person who mostly voted for(got the biggest number of occurrences)
+                var ejected_person = most_voted_person + " was ejected"
+                console.log(ejected_person);
+
+            }
+
+        }
+    // Testing
+        saboteur(array_of_votes = ["Green voted for Black", "Black voted for Blue", "Brown voted for Blue", "Blue voted for Black", "Cyan skipped voting", "Lime voted for Black"])
+        saboteur(array_of_votes = ["Cyan skipped voting", "Cyan skipped voting", "Cyan skipped voting", "Blue voted for Black", "Cyan skipped voting", "Lime voted for Black"])
+        saboteur(array_of_votes = ["Black voted for Blue", "Cyan skipped voting", "Cyan skipped voting", "Blue voted for Black", "Cyan skipped voting", "Lime voted for Black"])
+
+    </script>
+</body>
+</html>
+```
+### Testing
+![Quiz 31](https://user-images.githubusercontent.com/60378207/114541426-ad807500-9c91-11eb-867c-7f45cc0f351f.png)
+
+
