@@ -262,4 +262,67 @@ if the number of voted is bigger than skipped peolple-->
 ### Testing
 ![Quiz 31](https://user-images.githubusercontent.com/60378207/114541426-ad807500-9c91-11eb-867c-7f45cc0f351f.png)
 
+## Quiz 32
+### Solution
+```.html
+<!-- Quiz 32-->
+<!-- Inputs: encoded string characters and another string containing "E"s and "S"s which are the directions -->
+<!--Outputs: Decoded message -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 32</title>
+</head>
+<body>
+<h1>Quiz 32</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function BlackBox(string,directions){
+        // Creating arrays to store initial data
+        var s_letters = new Array();
+        var e_letters = new Array();
+
+        // Finding and separating "E"s from "S"s
+        for(let i = 0; i < directions.length; i++){
+            if(directions[i] == "E"){
+                // Saving E"s in the array
+                e_letters.push(string[i]);
+            }
+            if(directions[i] == "S"){
+                // Saving "S"s in the array
+                s_letters.push(string[i]);
+            }
+        }
+        //Converting arrays into string
+        let str_e_letters = e_letters.join("")
+        let str_s_letters = s_letters.join("");
+
+
+        var flipped_s_letters = ""
+        // Fliping and saving "S"s letters
+        for(let y = s_letters.length - 1; y >= 0; y--){
+            flipped_s_letters += s_letters[y]
+        }
+        // Conbining flipped "S"s letters with "E"s letters
+        var out = flipped_s_letters += str_e_letters
+        //Pring the result into a console
+        console.log(out);
+
+    }
+    // Testing
+    BlackBox("231 :ELPMAXE!","SESSSSSSSSSSE")
+    BlackBox("435","SSE")
+    BlackBox(" oworllledH!","SSEEESESSESE")
+    BlackBox("input","EEEEE")
+    BlackBox("input","SSSSS")
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 32](https://user-images.githubusercontent.com/60378207/114966001-aaad9c00-9eac-11eb-9ac1-11f33764f498.png)
