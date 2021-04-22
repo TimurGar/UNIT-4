@@ -326,3 +326,45 @@ if the number of voted is bigger than skipped peolple-->
 ```
 ### Testing
 ![Quiz 32](https://user-images.githubusercontent.com/60378207/114966001-aaad9c00-9eac-11eb-9ac1-11f33764f498.png)
+
+## Quiz 33
+### Solution
+```.html
+<!-- Quiz 33-->
+<!-- Inputs: a text and a specific letter-->
+<!--Outputs: Counts the occurences of a specific letter in the text provided -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 33</title>
+</head>
+<body>
+<h1>Quiz 33</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function countLetter(text,letter){
+        var count = 0;
+        //Going through each character in the text
+        for(let i = 0; i < text.length; i++){
+            //Finding and counting an occurence of a specific letter
+            if(text[i] == letter){
+                count++;
+            }
+        }
+        console.log(count)
+    }
+    // Testing
+    countLetter("Hello world! I am Timur. I like Computer Science","e")
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 33](https://user-images.githubusercontent.com/60378207/115650099-8d247a80-a363-11eb-8201-a716a222a9ef.png)
+
+
