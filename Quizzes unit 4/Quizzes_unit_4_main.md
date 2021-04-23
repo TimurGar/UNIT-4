@@ -328,6 +328,9 @@ if the number of voted is bigger than skipped peolple-->
 ![Quiz 32](https://user-images.githubusercontent.com/60378207/114966001-aaad9c00-9eac-11eb-9ac1-11f33764f498.png)
 
 ## Quiz 33
+### Initial flow diagram
+![IMG_20210422_112242](https://user-images.githubusercontent.com/60378207/115832668-1b752b00-a44e-11eb-96f2-c81273ef30d5.jpg)
+
 ### Solution
 ```.html
 <!-- Quiz 33-->
@@ -367,4 +370,65 @@ if the number of voted is bigger than skipped peolple-->
 ### Testing
 ![Quiz 33](https://user-images.githubusercontent.com/60378207/115650099-8d247a80-a363-11eb-8201-a716a222a9ef.png)
 
+## Quiz 34
+### Initial Brainstorming
+![IMG_20210423_134351 (1)](https://user-images.githubusercontent.com/60378207/115832339-be797500-a44d-11eb-9c08-0db1a1aa622f.jpg)
 
+### Solution
+```.html
+<!-- Quiz 34-->
+<!-- Inputs: array with roads that lead to cities-->
+<!--Outputs: Number of cities that can be reach from city 0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 34</title>
+</head>
+<body>
+<h1>Quiz 34</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function RoadsAndCities(roads_to_cities){
+        var list_of_cities = new Array();
+
+        // Number in the array - road from city N, -1 = no road
+        // Index of the road - city N-1
+
+        // Checking every road that lead to a city
+        for(let i=0; i < roads_to_cities.length; i++){
+            // Checking if there is a city in the list_of_cities array -> it can also be reached from city 0
+            // or if the city can be reach from city 0
+            if(roads_to_cities[i] == "0" || list_of_cities.includes(roads_to_cities[i])){
+                // Adding a city that can be reached for later comparison
+                list_of_cities.push(i)
+
+            }
+
+        }
+        // Outputing the result
+        console.log("INPUT:", roads_to_cities,"OUTPUT:", list_of_cities.length)
+
+    }
+    // Testing
+    RoadsAndCities([-1,0,-1,1,2,3])
+    RoadsAndCities([-1,0,1,2,3,0,2,6,7,8])
+    RoadsAndCities([-1,0])
+    RoadsAndCities([-1,-1,1,2,3,4,5,6,7,8,9])
+
+    // Generating an array of numbers from -1 to 998
+    var test_array = new Array()
+    for(let y=-1; y < 999; y++){
+        test_array.push(y);
+    }
+    RoadsAndCities(test_array)
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 34](https://user-images.githubusercontent.com/60378207/115832244-a3a70080-a44d-11eb-8597-3e076d8f770b.png)
