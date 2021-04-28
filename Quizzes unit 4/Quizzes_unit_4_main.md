@@ -432,3 +432,78 @@ if the number of voted is bigger than skipped peolple-->
 ```
 ### Testing
 ![Quiz 34](https://user-images.githubusercontent.com/60378207/115832244-a3a70080-a44d-11eb-8597-3e076d8f770b.png)
+
+## Quiz 36
+### Solution
+```.html
+<!-- Quiz 36-->
+<!-- Inputs: arrays of number -->
+<!--Outputs: calculated the mean or the median of the array -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 36</title>
+</head>
+<body>
+<h1>Quiz 36</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function Black_box_median(array_of_numbers){
+        // Sorting an array
+        console.log("INPUT: ", array_of_numbers);
+        for(let i=0; i< array_of_numbers.length; i++){
+
+            for(let y=0; y< array_of_numbers.length; y++){
+                // Swapping numbers in the array
+                if(array_of_numbers[y] < array_of_numbers[y+1]){
+                    var small_value = array_of_numbers[y]
+                    var big_value =  array_of_numbers[y+1]
+                    array_of_numbers[y] = big_value
+                    array_of_numbers[y+1] = small_value
+                }
+            }
+        }
+
+        // If the length of the array is odd
+        if(array_of_numbers.length % 2 != 0){
+            // Finding an index of a median
+            // -1 because array starts from 0
+            var index_of_median = (array_of_numbers.length + 1) / 2 - 1;
+            var median = array_of_numbers[index_of_median];
+
+            console.log("OUTPUT: ", median);
+        }
+        // If the length of the array is even
+        else {
+            var mean = 0
+            // Finding the sum of all the numbers in the array
+            for(let z=0; z< array_of_numbers.length; z++){
+                mean += array_of_numbers[z];
+            }
+            // Finding the mean of the array
+            mean = mean / array_of_numbers.length;
+            mean = Math.floor(mean);
+            console.log("OUTPUT: ", mean);
+        }
+
+    }
+    // Testing
+    Black_box_median([3,2,1])
+    Black_box_median([5,4,3,2,1])
+    Black_box_median([30,2,1,2])
+    Black_box_median([5,4,1,3,2,2])
+    Black_box_median([22,13,4,5,1,12,10,66,9])
+    Black_box_median([1,2,3,4,5,6,7])
+    Black_box_median([20,18,19,16,9,8,7,6,8,2])
+    Black_box_median([8,7,6,5,4,3,2,1])
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 36](https://user-images.githubusercontent.com/60378207/116332507-dfa2e280-a80c-11eb-9a61-25d9a93971fd.png)
