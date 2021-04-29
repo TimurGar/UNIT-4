@@ -19,15 +19,18 @@ The RCP is used to transfer the files, and the SSH protocol provides authenticat
 The SCP can also benefit from using SSH because it allows the inclusion of permissions and timestamps for the file that needs to be uploaded.
 
 ### Terminal commands
-**LS** -  ls is used for listing directory contents or file information in a terminal.
+1. **LS** -  ls is used for listing directory contents or file information in a terminal.
 
-**CAT** - cat allows us to create single or multiple files, view contain of file, concatenate files and redirect output in terminal or files.
+1. **CAT** - cat allows us to create single or multiple files, view contain of file, concatenate files and redirect output in terminal or files.
 
-**ECHO** - echo command writes(outputs) an argument in a terminal
+1. **ECHO** - echo command writes(outputs) an argument in a terminal
 
-**CD** - changes directory or which folder we are in. Ex: cd~ takes us to a home directory.
+1. **CD** - changes directory or which folder we are in. Ex: cd~ takes us to a home directory.
 
-**CHMOD** - allows us to change the file permissions.
+1. **CHMOD** - allows us to change the file permissions.
+
+
+
 
 **Server** - A server is a computer that provides data to other computers. It may serve data to systems on a local area network (LAN) or a wide area
 network (WAN) over the Internet. Many types of servers exist, including web servers, mail servers, and file servers.
@@ -51,3 +54,12 @@ While a WLAN may look different than a traditional LAN, it functions the same wa
 such as a building, office, or home. A LAN can be small or large, 
 ranging from a home network with one user to an enterprise network with thousands of users and devices in an office or school.
 Regardless of size, a LAN's single defining characteristic is that it connects devices that are in a single, limited area.
+
+**UDP** - User data protocol one of the core members of the Internet protocol suite. With UDP, computer applications can send messages, in this case referred to as datagrams, to other hosts on an Internet Protocol network. It speeds up communications by not formally establishing a connection before data is transferred. This allows data to be transferred very quickly, but it can also cause packets to become lost in transit — and create opportunities for exploitation in the form of DDoS attacks.
+
+**TCP** - Transmission Control Protocol is a transport protocol that is used on top of IP to ensure reliable transmission of packets. TCP includes mechanisms to solve many of the problems that arise from packet-based messaging, such as lost packets, out of order packets, duplicate packets, and corrupted packets.
+Since TCP is the protocol used most commonly on top of IP, the Internet protocol stack is sometimes referred to as TCP/IP.
+
+**NAS** - network-attached storage device is a data storage device that connects to and is accessed through a network, instead of connecting directly to a computer. NAS devices contain a processor and operating system so it can run applications and provide the intelligence needed for files to be easily shared by authorized people. The advantage of a NAS device is that it can be easily accessed by multiple people, multiple computers, mobile devices, or even remotely (if set up properly).  
+
+**RJ45** - The eight-pin RJ45 connector is a standardised interface which often connects a computer to a local area network (LAN).
