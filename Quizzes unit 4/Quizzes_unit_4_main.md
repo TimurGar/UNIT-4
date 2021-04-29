@@ -433,6 +433,101 @@ if the number of voted is bigger than skipped peolple-->
 ### Testing
 ![Quiz 34](https://user-images.githubusercontent.com/60378207/115832244-a3a70080-a44d-11eb-8597-3e076d8f770b.png)
 
+
+## Quiz 35
+### Solution, works for 45, 15
+```.html
+<!-- Quiz 35-->
+<!-- Inputs: an angle between minute and hour hand -->
+<!--Outputs: time in h:mm format -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 35</title>
+</head>
+<body>
+<h1>Quiz 35</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    var testing_angle = 45
+    console.log("INPUT: ", testing_angle)
+    //Creating a function
+    //The function will find all possible times
+    function Brute_Force_time(input) {
+        var array_times_hours = new Array()
+        var array_times_minutes = new Array()
+        for (i = 1; i < 13; i++) {
+
+            var input_modified = input + 15
+
+            // Finding hours
+            var hours = 0
+            while (input_modified > 0){
+                input_modified -= 30;
+                hours +=1
+            }
+
+            var minute_number = i + hours
+
+            // Finding minute
+            var degrees = 360/ (12/minute_number)
+            var minute = degrees/6
+
+
+            if (minute <61){
+                if (minute == 60){
+                    array_times_hours.push(i)
+                    array_times_minutes.push(0)
+                }
+                else{
+                    array_times_hours.push(i)
+                    array_times_minutes.push(minute)
+                }
+            }
+        }
+        return [array_times_hours, array_times_minutes, array_times_hours.length]
+    }
+
+    // Creating a function
+    // The angle will check if the time found has correct angle
+    function Check_the_angle(hours,minutes){
+        deg_hours = hours * (360/12) + (minutes * 360)/(12 * 60);
+        deg_minutes = (minutes * 360)/(60);
+
+        angle = Math.abs(deg_hours - deg_minutes);
+
+        if (angle > 180) {
+            angle = 360 - angle;
+        }
+    return angle
+
+    }
+
+    //Checking angles
+    var values = Brute_Force_time(testing_angle)
+    var B_hours = values[0]
+    var B_minutes = values[1]
+    var B_length = values[2]
+
+    // Printing the results
+    for(let i=0; i < B_length; i++){
+        if(Check_the_angle(B_hours[i],B_minutes[i]) == testing_angle){
+            console.log(B_hours[i] +":" + B_minutes[i])
+        }
+    }
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 35](https://user-images.githubusercontent.com/60378207/116508877-40114d00-a8fd-11eb-8735-7ce891230ae7.png)
+![Quiz 35 2](https://user-images.githubusercontent.com/60378207/116508959-66cf8380-a8fd-11eb-9da7-71241485a70e.png)
+
+
 ## Quiz 36
 ### Solution
 ```.html
