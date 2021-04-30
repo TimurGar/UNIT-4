@@ -601,4 +601,65 @@ if the number of voted is bigger than skipped peolple-->
 </html>
 ```
 ### Testing
+
 ![Quiz 36](https://user-images.githubusercontent.com/60378207/116332507-dfa2e280-a80c-11eb-9a61-25d9a93971fd.png)
+
+
+## Quiz 37
+### Initial flow diagram
+![IMG_20210430_161432](https://user-images.githubusercontent.com/60378207/116662830-3c4efa80-a9d1-11eb-9b89-614045caf408.jpg)
+
+### Solution
+```.html
+<!-- Quiz 37-->
+<!-- Inputs: string of numbers -->
+<!--Outputs: the biggest difference between coherent numbers -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 37</title>
+</head>
+<body>
+<h1>Quiz 37</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    //Creating a function
+    function Biggest_difference(string){
+        console.log("INPUT: ", string)
+        var max = 0;
+        // Checking if the string's length is greater than 1
+        // Otherwise there is nothing to compare so we just output the string itslef
+        if(string.length > 1){
+            // Going through all the numbers in the string
+            for(let i=0; i< string.length; i++){
+                dif = 0;
+
+                // Calculating the difference between coherent numbers
+                dif = parseInt(string[i+1]) - parseInt(string[i]);
+
+                // Saving the biggest difference
+                if(Math.abs(dif) > Math.abs(max)){
+                    max = dif;
+                }
+            }
+            console.log("OUTPUT: ", max)
+        }
+        else {
+            console.log("OUTPUT: ", string)
+        }
+    }
+    // Testing
+    Biggest_difference("02354310");
+    Biggest_difference("12386456792");
+    Biggest_difference("12387356792");
+    Biggest_difference("21025643894");
+    Biggest_difference("0");
+</script>
+</body>
+</html>
+```
+### Testing
+![Screen Shot 2021-04-30 at 16 30 53](https://user-images.githubusercontent.com/60378207/116663003-7ae4b500-a9d1-11eb-8996-30fa10d870d3.png)
