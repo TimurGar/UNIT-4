@@ -663,3 +663,60 @@ if the number of voted is bigger than skipped peolple-->
 ```
 ### Testing
 ![Screen Shot 2021-04-30 at 16 30 53](https://user-images.githubusercontent.com/60378207/116663003-7ae4b500-a9d1-11eb-8996-30fa10d870d3.png)
+
+
+## Quiz 39
+### Initial psudocode
+![IMG_20210504_082321](https://user-images.githubusercontent.com/60378207/116948322-0acc7c80-acba-11eb-9059-4c6de13fc846.jpg)
+
+### Solution
+```.html
+<!-- Quiz 39-->
+<!-- Inputs: a range of numbers -->
+<!--Outputs: number of Narcissistic numbers between the range -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 39</title>
+</head>
+<body>
+<h1>Quiz 39</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function Narcissistic_num(m,n){
+        console.log("INPUTS= ", m, n)
+
+        nar_numbers = new Array();
+        // Looping through all the numbers between the range provided(excluding m,n)
+        for(let i=m+1; i< n;i++){
+            var sum = 0
+            // Convert number to string
+            str_i = i.toString();
+            // Finding the lenght of string(or amount of digits in the number)
+            str_length = str_i.length;
+
+            // Looping through all the digits in the number
+            for(let y=0; y< str_length; y++){
+                // Doing calculations, to later check if the number is narcissistic
+                sum += str_i[y] ** str_length;
+            }
+            // Checking if the number is narcissistic
+            if(sum == i){
+                nar_numbers.push(i);
+            }
+        }
+        console.log("OUPUT= ", nar_numbers.length);
+    }
+    // Testing
+    Narcissistic_num(3,9);
+    Narcissistic_num(0,500)
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 39](https://user-images.githubusercontent.com/60378207/116948276-ed97ae00-acb9-11eb-88f2-1c29a9860860.png)
