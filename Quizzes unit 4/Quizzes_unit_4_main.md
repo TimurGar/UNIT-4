@@ -720,3 +720,61 @@ if the number of voted is bigger than skipped peolple-->
 ```
 ### Testing
 ![Quiz 39](https://user-images.githubusercontent.com/60378207/116948276-ed97ae00-acb9-11eb-88f2-1c29a9860860.png)
+
+## Quiz 41
+### Solution
+```.html
+<!-- Quiz 41-->
+<!-- Inputs: initial sizes of particles -->
+<!--Outputs: number of particles can be created by collision -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 41</title>
+</head>
+<body>
+<h1>Quiz 41</h1>
+<h3>To see results, check the console</h3>
+
+<script>
+    // Creating a function
+    function Particles(l){
+        console.log("INPUT: ", l);
+
+        var new_particle = 0;
+        var flag = 0;
+        // Looping until all possible sizes has been added
+        while (flag != 1) {
+            // Finding the sizes of particles after the collision
+            for (y = 0; y < l.length; y++) {
+                for (i = 0; i < l.length; i++) {
+                    // Calculating the size of each new particle after the collision
+                    new_particle = Math.abs(l[y] - l[i + y]);
+                    if (new_particle >= 1 && l.includes(new_particle) == 0) {
+                        l.push(new_particle);
+                    }
+                    else {
+                        flag = 1;
+                    }
+                }
+            }
+        }
+        console.log("OUTPUT: ",l.length);
+    }
+    // Testing
+    Particles([2,3,6]);
+    Particles([6,9]);
+    Particles([18,24]);
+    Particles([5,6,92,2,7]);
+    Particles([200,101,19,3]);
+
+</script>
+</body>
+</html>
+```
+### Testing
+![Quiz 41](https://user-images.githubusercontent.com/60378207/118612136-71908080-b7f8-11eb-9341-aa36fc7cd3fa.png)
+
+
