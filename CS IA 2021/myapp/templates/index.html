@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Hi, {{ current_user.username }}!</h1>
+<h3>Your projects:</h3>
+
+{# Listing all the projects   #}
+{% for project in projects %}
+    <table>
+        <tr valign="top">
+                <td><img src="{{ project.avatar(36) }}" alt=""></td>
+                <td>
+                    <a href="{{ url_for('project_profile', name=project.name) }}">
+                        <b>{{ project.name }}</b>
+                    </a>
+                </td>
+            </tr>
+    </table>
+{% endfor %}
+{#    {% if prev_url %}#}
+{#    <a href="{{ prev_url }}">Newer posts</a>#}
+{#    {% endif %}#}
+{#    {% if next_url %}#}
+{#    <a href="{{ next_url }}">Older posts</a>#}
+{#    {% endif %}#}
+
+
+{# New project button   #}
+    <a href="{{ url_for('new_project') }}">
+        <button>New Project</button>
+    </a>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <tr valign="top">
+            <td><img src="{{ project.avatar(128) }}" alt="avatar-img"></td>
+            <td>
+                <h1>{{ project.name }}</h1>
+                {% if project.description %}<p>{{ project.description }}</p>{% endif %}
+                {% if project.author == current_user %}
+                <p><a href="{{ url_for('edit_project') }}">Edit your profile</a></p>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    {% for item in items %}
+        <tr valign="top">
+                <td><img src="{{ item.avatar(36) }}" alt=""></td>
+                <td>
+                    <a href="{{ url_for('project_profile', name=project.name) }}">
+                        <b>{{ item.name }}</b>
+                    </a>
+                </td>
+            </tr>
+    {% endfor %}
+
+    {# Add item button   #}
+    <a href="{{ url_for('new_item') }}">
+        <button>Add Item</button>
+    </a>
+{% endblock %}
