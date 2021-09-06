@@ -777,4 +777,38 @@ if the number of voted is bigger than skipped peolple-->
 ### Testing
 ![Quiz 41](https://user-images.githubusercontent.com/60378207/118612136-71908080-b7f8-11eb-9341-aa36fc7cd3fa.png)
 
+## Quiz 45
+### Solution
+```.py
+# Quiz 45
+# Inputs:
+# none
 
+# Output:
+# 10 lists with a randomly generated numbers inside
+# A sum of each list
+
+from random import randrange
+
+# creating a function
+def rand_lists():
+    # creating a list of lists
+    list_of_lists = [[] for i in range(10)]
+    for count, list in enumerate(list_of_lists):
+        n, sum = 0, 0
+        
+        # Generating and adding random numbers to lists
+        # Finding a sum of lists
+        for y in range(10):
+            n = randrange(10)
+            sum += n
+            list.append(n)
+        
+        # Showing the result
+        print(f"List_{count} {list_of_lists[count]} Sum = {sum}")
+
+# Calling a function
+rand_lists()
+```
+### Testing
+![Screen Shot 2021-09-06 at 9 17 38](https://user-images.githubusercontent.com/60378207/132145414-01f58684-a1e5-4ddb-88c6-550fc52c4508.png)
