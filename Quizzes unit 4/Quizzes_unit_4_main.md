@@ -812,3 +812,31 @@ rand_lists()
 ```
 ### Testing
 ![Screen Shot 2021-09-06 at 9 17 38](https://user-images.githubusercontent.com/60378207/132145414-01f58684-a1e5-4ddb-88c6-550fc52c4508.png)
+
+## Quiz 46
+### Solution
+```.py
+# Quiz 45
+# Inputs:
+# number
+
+# Output:
+# average, highest and lowest numbers
+
+avr, highest, lowest, counter = 0, 0, 0, 0
+while counter < 999:
+    number = int(input("Enter a number: "))
+    if number >= 0 and number % 1001:
+        avr = (avr + number) / (counter + 1)
+        if number > highest:
+            highest = number
+        if number < lowest:
+            lowest = number
+        counter += 1
+    else:
+        print("Input a number bigger than 0 and smaller than 1001")
+
+print(f"highest - {highest}, lowest - {lowest}, avr - {avr}")
+```
+### Testing
+![Screen Shot 2021-09-09 at 21 34 06](https://user-images.githubusercontent.com/60378207/132686664-933d182c-0911-42f5-9cd9-6ad574e635dd.png)
