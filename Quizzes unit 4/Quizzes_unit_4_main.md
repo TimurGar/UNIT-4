@@ -840,3 +840,73 @@ print(f"highest - {highest}, lowest - {lowest}, avr - {avr}")
 ```
 ### Testing
 ![Screen Shot 2021-09-09 at 21 34 06](https://user-images.githubusercontent.com/60378207/132686664-933d182c-0911-42f5-9cd9-6ad574e635dd.png)
+
+## Quiz 47
+## Part one
+### Solution
+```.py
+# Quiz 47
+# Inputs:
+# none
+
+# Output:
+# 2D array with the position of the chess board
+
+
+letters = ["A","B","C","D","E","F","G","H"]
+line = ""
+
+#  counter is used to go through all the values in the letters array
+for counter in range(8):
+    # i is used through the numbers 1-8
+    for i in range(8):
+        # Combining a letters with numbers
+        message = letters[counter] + str(i+1)
+        # creating a line of messages
+        line = line + " " + message
+
+    line = line + "\n"
+
+print(line)
+```
+### Testing
+![Screen Shot 2021-09-10 at 12 12 45](https://user-images.githubusercontent.com/60378207/132793590-c204e83e-149f-4051-955c-20a2e86d13d4.png)
+
+## Part two
+### Solution
+```.py
+# Task create a class Array with functions get and set
+
+class Array():
+    # Initializing 
+    def __init__(self, size):
+        self.size: int = size
+        self.data: list = [None] * size
+
+
+    # Creating "get" function
+    def get(self, index):
+        return print(f"The value with index {index} is {self.data[index]}")
+
+
+    # Creating "set" function
+    def set(self, index, value):
+        
+        # checking if the value provided is not bigger than the size of the array
+        if index <= self.size:
+            self.data[index] = value
+            return print(f"updated array - {self.data}")
+        else:
+            return print("Index out of range")
+
+# Testing
+array = Array(5)
+array.set(7,7)
+array.set(1,6)
+array.set(2,9)
+array.set(3,100)
+array.set(4,-1)
+array.get(0)
+```
+### Testing
+![Screen Shot 2021-09-10 at 12 16 06](https://user-images.githubusercontent.com/60378207/132793835-d32c7411-1320-448e-918d-9a62f0f532c5.png)
