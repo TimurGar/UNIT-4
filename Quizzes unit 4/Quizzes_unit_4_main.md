@@ -910,3 +910,56 @@ array.get(0)
 ```
 ### Testing
 ![Screen Shot 2021-09-10 at 12 16 06](https://user-images.githubusercontent.com/60378207/132793835-d32c7411-1320-448e-918d-9a62f0f532c5.png)
+
+## Quiz 48
+## Part one
+### Solution
+```.py
+# Quiz 48
+
+```
+### Testing
+
+## Homework - Stack
+### Solution
+```.py
+class Stack:
+    # Initializing
+    def __init__(self):
+        self.data: list = []
+
+    def push(self, value):
+        self.data.append(value)
+        print(f"Current stack - {self.data}")
+
+    def pop(self):
+        updated_stack = []
+        if len(self.data) != 0:
+            for i in range(len(self.data)-1):
+                updated_stack.append(self.data[i])
+            print(f"First in line - {self.data[-1]}, current stack - {updated_stack}")
+            self.data = updated_stack
+        else:
+            return print("Stack is empty")
+
+    def is_empty(self):
+        if self.data:
+            print("stack is not empty")
+        else:
+            print("stack is empty")
+
+    def currrent_size(self):
+        return print(f"current length - {len(self.data)}")
+
+# Testing
+stack1 = Stack()
+stack1.push(3)
+stack1.push(5)
+stack1.pop()
+stack1.pop()
+stack1.push(100)
+stack1.is_empty()
+stack1.currrent_size()
+```
+### Testing
+![Screen Shot 2021-09-16 at 8 51 42](https://user-images.githubusercontent.com/60378207/133527975-39e8b799-0cd5-4f9b-9c1b-4481049c2243.png)
