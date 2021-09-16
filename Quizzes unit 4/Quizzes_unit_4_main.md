@@ -916,9 +916,25 @@ array.get(0)
 ### Solution
 ```.py
 # Quiz 48
+# Inputs:
+# 10 numbers from a user
 
+# Output:
+# average of the numbers
+
+from HomeworkQueue import Queue
+Q = Queue()
+sum = 0
+for i in range(10):
+    inp = int(input("Input number: "))
+    Q.enqueue(inp)
+for y in range(10):
+    dq = Q.deque()
+    sum += int(dq)
+print(f"Sum - {sum/10}")
 ```
 ### Testing
+![Screen Shot 2021-09-16 at 9 19 41](https://user-images.githubusercontent.com/60378207/133530308-655cf8a4-99ad-4f33-8d54-02439f8d8029.png)
 
 ## Homework - Stack
 ### Solution
