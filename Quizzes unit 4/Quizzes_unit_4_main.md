@@ -922,6 +922,9 @@ array.get(0)
 # Output:
 # average of the numbers
 
+# Special requirements
+# Have to use a queue
+
 from HomeworkQueue import Queue
 Q = Queue()
 sum = 0
@@ -979,3 +982,47 @@ stack1.currrent_size()
 ```
 ### Testing
 ![Screen Shot 2021-09-16 at 8 51 42](https://user-images.githubusercontent.com/60378207/133527975-39e8b799-0cd5-4f9b-9c1b-4481049c2243.png)
+
+## Quiz 49
+### Solution
+```.py
+# Quiz 49
+# Inputs:
+# 10 Ib scores(1-7) from the user
+
+# Output:
+# average of the scores
+
+# Special requirements
+# Have to use a stack
+
+from HomeworkStack import Stack
+
+# Creating a function
+def Quiz_49():
+    stack = Stack()
+    stack2 = Stack()
+    data = []
+    sum = 0
+    # Getting scores from the user
+    for i in range(10):
+        score = int(input("Enter a score: "))
+        if score >= 8 or score <= 0:
+            print("Incorrect score")
+        else:
+            # Saving scores into a stack
+            stack.push(score)
+
+    # Popping scores from the stack and calculating the average 
+    for y in range(10):
+        val = stack.pop()
+        sum += val
+        # saving all the entered grades in a new stack
+        stack2.push(val)
+
+    return print(f"Average score is {sum/10}")
+
+Quiz_49()
+```
+### Testing
+![Screen Shot 2021-09-17 at 11 35 30](https://user-images.githubusercontent.com/60378207/133715340-a2e8b1d6-a67f-4d03-bca7-47963170a116.png)
